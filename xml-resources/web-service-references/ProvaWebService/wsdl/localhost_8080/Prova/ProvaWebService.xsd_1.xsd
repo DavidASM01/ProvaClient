@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice/">
+
+<xs:element name="allquestao" type="tns:allquestao"/>
+
+<xs:element name="allquestaoResponse" type="tns:allquestaoResponse"/>
+
+<xs:element name="consultalternativas" type="tns:consultalternativas"/>
+
+<xs:element name="consultalternativasResponse" type="tns:consultalternativasResponse"/>
+
+<xs:element name="consultcorrecao" type="tns:consultcorrecao"/>
+
+<xs:element name="consultcorrecaoResponse" type="tns:consultcorrecaoResponse"/>
+
+<xs:element name="consultquestao" type="tns:consultquestao"/>
+
+<xs:element name="consultquestaoResponse" type="tns:consultquestaoResponse"/>
+
+<xs:element name="createalternativa" type="tns:createalternativa"/>
+
+<xs:element name="createalternativaResponse" type="tns:createalternativaResponse"/>
+
+<xs:element name="createquestao" type="tns:createquestao"/>
+
+<xs:element name="createquestaoResponse" type="tns:createquestaoResponse"/>
+
+<xs:element name="createusuario" type="tns:createusuario"/>
+
+<xs:element name="createusuarioResponse" type="tns:createusuarioResponse"/>
+
+<xs:element name="updatealternativa" type="tns:updatealternativa"/>
+
+<xs:element name="updatealternativaResponse" type="tns:updatealternativaResponse"/>
+
+<xs:element name="updatequestao" type="tns:updatequestao"/>
+
+<xs:element name="updatequestaoResponse" type="tns:updatequestaoResponse"/>
+
+<xs:element name="updateusuario" type="tns:updateusuario"/>
+
+<xs:element name="updateusuarioResponse" type="tns:updateusuarioResponse"/>
+
+<xs:complexType name="updateusuario">
+<xs:sequence>
+<xs:element name="idusuario" type="xs:int"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="senha" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateusuarioResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="updatealternativa">
+<xs:sequence>
+<xs:element name="idquestao" type="xs:int"/>
+<xs:element name="a" type="xs:string" minOccurs="0"/>
+<xs:element name="b" type="xs:string" minOccurs="0"/>
+<xs:element name="c" type="xs:string" minOccurs="0"/>
+<xs:element name="d" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatealternativaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultalternativas">
+<xs:sequence>
+<xs:element name="idquestao" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultalternativasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:alternativas" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alternativas">
+<xs:sequence>
+<xs:element name="a" type="xs:string" minOccurs="0"/>
+<xs:element name="b" type="xs:string" minOccurs="0"/>
+<xs:element name="c" type="xs:string" minOccurs="0"/>
+<xs:element name="d" type="xs:string" minOccurs="0"/>
+<xs:element name="idalternativas" type="xs:int"/>
+<xs:element name="idquestao" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultquestao">
+<xs:sequence>
+<xs:element name="idquestao" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultquestaoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:questao" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="questao">
+<xs:sequence>
+<xs:element name="correta" type="xs:string" minOccurs="0"/>
+<xs:element name="enunciado" type="xs:string" minOccurs="0"/>
+<xs:element name="idquestao" type="xs:int"/>
+<xs:element name="score" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createquestao">
+<xs:sequence>
+<xs:element name="enunciado" type="xs:string" minOccurs="0"/>
+<xs:element name="correta" type="xs:string" minOccurs="0"/>
+<xs:element name="score" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createquestaoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultcorrecao">
+<xs:sequence>
+<xs:element name="idquestao" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultcorrecaoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:questao" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="allquestao">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="allquestaoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:questao" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createalternativa">
+<xs:sequence>
+<xs:element name="idquestao" type="xs:int"/>
+<xs:element name="a" type="xs:string" minOccurs="0"/>
+<xs:element name="b" type="xs:string" minOccurs="0"/>
+<xs:element name="c" type="xs:string" minOccurs="0"/>
+<xs:element name="d" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createalternativaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="updatequestao">
+<xs:sequence>
+<xs:element name="idquestao" type="xs:int"/>
+<xs:element name="enunciado" type="xs:string" minOccurs="0"/>
+<xs:element name="correta" type="xs:string" minOccurs="0"/>
+<xs:element name="score" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatequestaoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="createusuario">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="senha" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createusuarioResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
